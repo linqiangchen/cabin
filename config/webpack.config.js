@@ -108,6 +108,7 @@ module.exports = function (webpackEnv) {
       {
         loader: require.resolve('css-loader'),
         options: cssOptions,
+        
       },
       {
         // Options for PostCSS as we reference these options twice
@@ -129,6 +130,12 @@ module.exports = function (webpackEnv) {
             // Adds PostCSS Normalize as the reset css with default options,
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
+            　　require('postcss-pxtorem')({
+              rootValue: 37.5,
+              selectorBlackList: [], //过滤
+              propList: ['*'],
+              exclude: /node_modules/i  // 过滤掉node_modules 文件夹下面的样式
+            }),  
             postcssNormalize(),
           ],
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
@@ -336,6 +343,7 @@ module.exports = function (webpackEnv) {
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
         // guards against forgotten dependencies and such.
         PnpWebpackPlugin,
+        
         // Prevents users from importing files from outside of src/ (or node_modules/).
         // This often causes confusion because we only process files within src/ with babel.
         // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
@@ -572,6 +580,7 @@ module.exports = function (webpackEnv) {
             : undefined
         )
       ),
+    
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       // https://github.com/facebook/create-react-app/issues/5358

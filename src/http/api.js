@@ -1,0 +1,1 @@
+export const BASE_API = 'http://10.36.150.18:3000/'

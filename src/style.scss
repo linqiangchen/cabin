@@ -1,0 +1,36 @@
+.App{
+    .nav{
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        height: 49px;
+     align-items: center;
+        border-top: 1PX #ccc solid;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff ;
+        a{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            i{
+                font-size: 20px;
+            }
+        }
+        .active{
+            color: lightblue;
+        }
+    }
+}
+.image{
+
+    
+    
+}
+.none{
+    opacity: 0;
+    position: absolute;
+    z-index: -11000;
+}
